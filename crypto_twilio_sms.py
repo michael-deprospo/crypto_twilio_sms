@@ -17,7 +17,7 @@ parameters = {
 }
 headers = {
   'Accepts': 'application/json',
-  'X-CMC_PRO_API_KEY': '00fba422-51e9-4930-86d6-e55922a887e9',
+  'X-CMC_PRO_API_KEY': 'coinmarketcap api key',
 }
 
 session = Session()
@@ -40,13 +40,12 @@ for symbol in prices:
   msg+= symbol + " is currently $" + str(round(prices[symbol],2)) + ". "
 print(msg)
 
-account_sid = "ACa8341886e11b06d5a17a028fe6430eac"
-auth_token = "8e0f046ea68540357040c1538c1c01f0"
+account_sid = "your id"
+auth_token = "your token"
 client = Client(account_sid, auth_token)
 
 message = client.messages \
                 .create(
-                     #body="Can't bench two plates lolololololololololololololol",
                      body = msg,
                      from_= '+13126971798',
                      to = '#xxxxxxxxxxx'
